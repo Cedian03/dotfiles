@@ -1,0 +1,12 @@
+# https://i3wm.org/docs/i3status.html
+
+general {
+	output_format = "i3bar"
+	interval = 5
+}
+
+order += "time"
+
+time {
+     format = "%d/%m/%y %H:%M"
+}
