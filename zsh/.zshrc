@@ -106,5 +106,11 @@ export EDITOR="emacs"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # zoxide
 
+if [ -f ~/.common_aliases ]; then
+    source ~/.common_aliases
+fi    
+
 export PATH="$PATH:/home/cedian/.local/bin"
+
+# zoxide
 eval "$(zoxide init zsh --cmd cd)"
