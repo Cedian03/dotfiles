@@ -1,4 +1,4 @@
-# https://i3wm.org/docs/userguide.html
+# Full referrnce: https://i3wm.org/docs/userguide.html
 
 # i3 config file (v4)
 #
@@ -51,7 +51,8 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'DejaVu Sans Mono-13' -nb '#181818' -nf '#F0F0F0' -sb '#ffde21' -sf '#101010'"
+bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop \
+	 --dmenu="dmenu -fn 'DejaVu Sans Mono-13' -nb '#181818' -nf '#F0F0F0' -sb '#ffde21' -sf '#101010'"
 
 # change focus
 bindsym $mod+j focus left
@@ -145,7 +146,14 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-nagbar \
+	-f "pango:DejaVu Sans Mono 12" \
+	-m "Exit i3? This will end your current X session." \
+	-B "Exit now" "i3-msg exit" \
+	-B "Suspend" "systemctl suspend && pkill i3-nagbar" \
+	-B "Reboot" "systemctl reboot" \
+	-B "Power off" "systemctl poweroff" \
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,7 +185,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config "~/.config/i3status/config"
+	status_command i3status --config "~/.config/i3status/config"
 	position top
 
 	font pango:DejaVu Sans Mono 10
@@ -186,9 +194,13 @@ bar {
 	colors {
 	       # class              border  backgr. text
 	       focused_workspace    #ffde21 #ffde21 #101010
+	       active_workspace     #242424 #242424 #888888
 	       inactive_workspace   #242424 #242424 #888888
+	       inactive_workspace   #242424 #242424 #888888
+	       urgent_workspace     #242424 #242424 #888888
+	       binding_mode         #242424 #242424 #888888
 
-	       background           #161616
+	       background           #181818
 	       statusline           #f0f0f0
 
 	       # default colors
@@ -206,6 +218,11 @@ bar {
 }
 
 # class                   border  backgr. text    indica. childb.
+client.focused            #ffde21 #ffde21 #080808 #ff00ff #ff00ff
+client.focused_inactive   #242424 #242424 #888888 #ff00ff #ff00ff
+client.unfocused          #242424 #242424 #888888 #ff00ff #ff00ff
+client.urgent             #242424 #242424 #888888 #ff00ff #ff00ff
+client.placeholder        #242424 #242424 #888888 #ff00ff #ff00ff
 
 client.background         #080808
 
