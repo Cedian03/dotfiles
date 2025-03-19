@@ -18,7 +18,7 @@
     # Terminal emulator
     set $terminal alacritty
     # App launcher
-    set $launcher rofi -show run
+    set $launcher rofi -show drun
     # Web browser
     set $browser firefox
 #
@@ -120,11 +120,11 @@
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    # # Toggle the current focus between tiling and floating mode
+    # bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # # Swap focus between the tiling area and the floating area
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -143,7 +143,9 @@
 #
 # Resizing containers:
 #
-mode "Resize" {
+set $mode_resize "Resize"
+bindsym $mod+r mode $mode_resize
+mode $mode_resize {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
@@ -161,11 +163,23 @@ mode "Resize" {
 
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "Resize"
 #
+# Keyboard layout:
+#
+set $mode_layout "Layout: [a]nsi, iso-[s]e"
+bindsym $mod+space mode $mode_layout
+mode $mode_layout {
+    # s to suspendf
+    bindsym a exec --no-startup-id setxkbmap us, mode "default"
+    # r to restart
+    bindsym s exec --no-startup-id setxkbmap se, mode "default"
+
+    bindsym Escape mode "default"
+}
 # System control:
 #
 set $mode_system "System: [e]xit, [s]uspend, [r]estart"
+bindsym $mod+Shift+e mode $mode_system
 mode $mode_system {
     # e to exit
     bindsym e exit
@@ -208,6 +222,7 @@ bar {
 #
     # i3-ignore
     gaps inner 10
+    
     default_border pixel 
     default_floating_border pixel 
 
