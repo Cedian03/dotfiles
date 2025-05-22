@@ -1,0 +1,50 @@
+// https://github.com/Alexays/Waybar/wiki/Configuration
+// https://github.com/mechakotik/dots/blob/main/.config/waybar/config
+
+{
+    "position": "top",
+    "spacing": 0,
+    // "start_hidden": true,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "hyprland/language", "tray"],
+
+    "hyprland/workspaces": {
+
+    },
+
+    "clock": {
+        "format": "{:%d/%m/%Y | %H:%M}",
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "format": "{icon}",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    },
+
+    "network": {
+        "format": "",
+        "format-ethernet": "\udb83\udc9d",
+        "format-wifi": "{icon}",
+        "format-disconnected": "\udb83\udc9c",
+        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+    },
+
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-no-controller": "",
+        "format-disabled": "\udb80\udcb2",
+        "format-connected": "\udb80\udcb1",
+    },
+
+    "hyprland/language": {
+        "format": "{short}",
+    },
+
+    "tray": {
+        "icon-size": 12,
+        "spacing": 12,
+    }
+}
