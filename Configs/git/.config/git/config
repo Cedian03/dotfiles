@@ -1,0 +1,50 @@
+[user]
+name = Cedian03
+email = nyaalgotjohansson@gmail.com
+signingkey = 3061B77BA3A15952
+
+[core]
+compression = 9
+whitespace = error
+preloadindex = true
+
+[advice]
+addEmptyPathspec = false
+pushNonFastForward = false
+statusHints = false
+
+[init]
+defaultBranch = main
+
+[log]
+abbrevCommit = true
+
+[blame]
+date = relative
+
+[status]
+branch = true
+showStash = true
+short = true
+
+[diff]
+context = 3
+renames = copies
+interHunkContexts = 10
+
+[commit]
+gpgSign = true
+
+[push]
+autoSetupRemote = true
+default = current
+
+[pull]
+default = current
+rebase = true
+
+[rebase]
+autoStash = true
+
+[url "https://github.com/"]
+insteadOf = "gh:"
