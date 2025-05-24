@@ -38,17 +38,16 @@ inputbar {
 
 entry {
     placeholder: "Search";
-    placeholder-color: #888;
-    background-color: @bg;
+    placeholder-color: @fg-alt;
+    background-color: @bg-alt;
     text-color: @fg;
-    padding-bottom: 20px;
 }
 
 listview {
     lines: 8;
     columns: 1;
     background-color: @bg;
-    padding: 0.5em 0 0 0;
+    padding: 0.2em 0 0 0;
     margin: 0.4em 0 0 0;
     border-color: #fff;
 }
