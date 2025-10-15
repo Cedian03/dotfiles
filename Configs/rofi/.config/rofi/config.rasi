@@ -1,0 +1,16 @@
+configuration {
+    font: "Roboto Mono 12";
+    
+    kb-row-up: "Up,Control+k,Shift+Tab";
+    kb-row-down: "Down,Control+j";
+    kb-accept-entry: "Control+m,Return";
+    kb-remove-to-eol: "Control+Shift+e";
+    kb-remove-char-back: "BackSpace";
+
+    timeout {
+        action: "kb-cancel";
+        delay: 0;
+    }
+}
+
+@theme "~/.config/rofi/themes/theme.rasi"

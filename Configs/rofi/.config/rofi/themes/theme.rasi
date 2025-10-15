@@ -1,0 +1,78 @@
+* {
+    bg: #000;
+    bg-alt: #111;
+    fg: #fff;
+    fg-alt: #888;
+
+    x-border-width: 2px;
+    x-border-radius: 10px;
+    x-border-color: #fff;
+
+    background-color: @bg;
+    text-color: @fg;
+
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    border: @x-border-width;
+    border-radius: @x-border-radius;
+    border-color: @x-border-color;
+    background-color: @bg;
+}
+
+mainbox {
+    background-color: @bg;
+
+    padding: 8px;
+    // spacing: 0.5em;
+}
+
+inputbar {
+    background-color: @bg;
+    children: [entry];
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @fg-alt;
+    background-color: @bg-alt;
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    background-color: @bg;
+    padding: 0.2em 0 0 0;
+    margin: 0.4em 0 0 0;
+    border-color: #fff;
+}
+
+element {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element normal.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @bg-alt;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
