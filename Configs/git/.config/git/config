@@ -46,5 +46,11 @@ rebase = true
 [rebase]
 autoStash = true
 
-[url "git@github.com:"]
+[url "git@github:"]
 insteadOf = "gh:"
+
+[url "git@gitlab-liu:"]
+insteadOf = "gl:"
+
+[includeIf "gitdir:~/Projects/Academic/"]
+path = ~/Projects/Academic/.gitconfig
