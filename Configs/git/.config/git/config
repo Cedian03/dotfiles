@@ -46,10 +46,10 @@ rebase = true
 [rebase]
 autoStash = true
 
-[url "git@github:"]
+[url "git@github.com:"]
 insteadOf = "gh:"
 
-[url "git@gitlab-liu:"]
+[url "git@gitlab.liu.se:"]
 insteadOf = "gl:"
 
 [includeIf "gitdir:~/Projects/Academic/"]
