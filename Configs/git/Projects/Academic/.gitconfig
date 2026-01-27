@@ -4,7 +4,4 @@ email = algjo562@student.liu.se
 signingkey = 
 
 [commit]
-gpgSign = false 
-
-[url "git@gitlab.liu.se:"]
-insteadOf = "gl:"
+gpgSign = false
