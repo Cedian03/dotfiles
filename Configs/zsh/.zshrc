@@ -3,10 +3,6 @@ ZSH_THEME="eastwood"
 
 HYPHEN_INSENSITIVE="true"
 
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
-
 plugins=(
   git
   zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -29,4 +25,11 @@ if command -v bat >/dev/null 2>&1; then
     
     alias -g -- -h="-h 2>&1 | bathelp"
     alias -g -- --help="--help 2>&1 | bathelp"
+fi
+
+if [[ -n $SSH_CONNECTION ]]; then   
+  precmd() {
+    # PROMPT="$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b"
+    PROMPT="$(git_custom_status)%{$fg[cyan]%}[%n@%m:%~% ]%{$reset_color%}%B$%b "
+  }
 fi
