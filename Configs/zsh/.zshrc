@@ -27,9 +27,4 @@ if command -v bat >/dev/null 2>&1; then
     alias -g -- --help="--help 2>&1 | bathelp"
 fi
 
-if [[ -n $SSH_CONNECTION ]]; then   
-  precmd() {
-    # PROMPT="$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b"
-    PROMPT="$(git_custom_status)%{$fg[cyan]%}[%n@%m:%~% ]%{$reset_color%}%B$%b "
-  }
-fi
+RPROMPT='%{$fg[cyan]%}${SSH_CONNECTION:+%n@%m}%{$reset_color%}'
