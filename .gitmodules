@@ -1,0 +1,3 @@
+[submodule "Configs/nvim/.config/nvim"]
+	path = Configs/nvim/.config/nvim
+	url = https://github.com/Cedian03/kickstart.nvim
