@@ -35,7 +35,14 @@ alias r="sudo pacman -Rns"
 alias oc="opencode"
 alias cx="codex"
 alias t='tmux attach || tmux new -s Work'
-alias bt=bluetoothctl
+
+bt() {
+  case "$1" in
+    on)  bluetoothctl power on ;;
+    off) bluetoothctl power off ;;
+    *)   bluetoothctl "$@" ;;
+  esac
+}
 
 # Pathstash
 bindkey "^Xf" pathstash-fill
