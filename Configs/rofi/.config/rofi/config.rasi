@@ -1,5 +1,5 @@
 configuration {
-    font: "Roboto Mono 12";
+    font: "JetBrainsMono Nerd Font 12";
     
     kb-row-up: "Up,Control+k,Shift+Tab";
     kb-row-down: "Down,Control+j";

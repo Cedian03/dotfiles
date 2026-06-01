@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Power Menu
+Comment=Lock, logout, suspend, hibernate, reboot, or shutdown
+Exec=/home/cedian/.config/rofi/scripts/powermenu.sh
+Icon=system-shutdown
+Type=Application
+Categories=Utility;System;

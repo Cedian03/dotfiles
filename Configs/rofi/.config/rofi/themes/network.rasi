@@ -1,0 +1,13 @@
+@import "theme.rasi"
+
+* {
+    bg: #0a0f1a;
+    bg-alt: #0f1a2d;
+    fg: #6ba3ff;
+    fg-alt: #40608a;
+    x-border-color: #4488ff;
+}
+
+window {
+    width: 500px;
+}

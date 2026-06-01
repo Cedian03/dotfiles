@@ -1,0 +1,17 @@
+@import "theme.rasi"
+
+* {
+    bg: #1a0a0a;
+    bg-alt: #2d0f0f;
+    fg: #ff6b6b;
+    fg-alt: #8a4040;
+    x-border-color: #ff4444;
+}
+
+window {
+    width: 320px;
+}
+
+listview {
+    lines: 4;
+}

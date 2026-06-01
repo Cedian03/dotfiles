@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Wallpaper Switcher
+Comment=Browse and set wallpapers
+Exec=/home/cedian/.config/rofi/scripts/wallpaper.sh
+Icon=preferences-desktop-wallpaper
+Type=Application
+Categories=Utility;System;

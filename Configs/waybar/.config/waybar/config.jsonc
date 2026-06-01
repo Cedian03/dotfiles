@@ -3,6 +3,7 @@
 {
   "position": "top",
   "spacing": 0,
+  "margin-top": 8,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],

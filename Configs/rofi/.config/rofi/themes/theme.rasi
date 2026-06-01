@@ -1,11 +1,11 @@
 * {
-    bg: #000;
-    bg-alt: #111;
+    bg: #111;
+    bg-alt: #222;
     fg: #fff;
     fg-alt: #888;
 
     x-border-width: 2px;
-    x-border-radius: 10px;
+    x-border-radius: 8px;
     x-border-color: #fff;
 
     background-color: @bg;
@@ -22,6 +22,7 @@ window {
     border-radius: @x-border-radius;
     border-color: @x-border-color;
     background-color: @bg;
+    width: 600;
 }
 
 mainbox {

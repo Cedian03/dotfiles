@@ -1,0 +1,32 @@
+@import "theme.rasi"
+
+* {
+    bg: #0f0a1a;
+    bg-alt: #1a0f2d;
+    fg: #b36bff;
+    fg-alt: #6b4098;
+    x-border-color: #9944ff;
+}
+
+window {
+    width: 600px;
+}
+
+listview {
+    lines: 4;
+    columns: 2;
+    spacing: 0.5em;
+}
+
+element {
+    orientation: horizontal;
+    padding: 4px;
+}
+
+element-icon {
+    size: 3em;
+}
+
+element-text {
+    padding: 0 0 0 0.6em;
+}

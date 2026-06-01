@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Bluetooth Manager
+Comment=Enable/disable Bluetooth, pair, and connect devices
+Exec=/home/cedian/.config/rofi/scripts/bluetooth.sh
+Icon=bluetooth
+Type=Application
+Categories=Utility;System;

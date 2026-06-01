@@ -69,3 +69,63 @@ tdl() {
 
 alias ic='tdl opencode'
 alias ix='tdl codex'
+
+# Git
+gmsg-api() {
+  emulate -L zsh
+
+  local model="${OLLAMA_COMMIT_MODEL:-qwen2.5-coder:1.5b}"
+
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+    print -u2 -- "Not inside a git repo"
+    return 1
+  }
+
+  git diff --cached --quiet && {
+    print -u2 -- "No staged changes. Use: git add <files>"
+    return 1
+  }
+
+  local diff examples prompt
+  diff="$(git diff --cached)"
+
+  examples="$(git log --pretty=format:'- %s' -n 20 2>/dev/null)"
+
+  prompt="Write exactly one git commit message for this staged git diff.
+
+Use the same style, wording, capitalization, and format as these recent commits:
+
+$examples
+
+Rules:
+- Output only the commit message.
+- No markdown.
+- No code fences.
+- No quotes.
+- No explanation.
+- Keep it concise.
+- Match the project's existing commit style over Conventional Commits if they differ.
+
+Example output:
+fix: resolve null pointer in user auth flow
+
+Staged diff:
+$diff"
+
+  jq -n \
+    --arg model "$model" \
+    --arg prompt "$prompt" \
+    '{
+      model: $model,
+      prompt: $prompt,
+      stream: false,
+      options: {
+        temperature: 0.2,
+        num_ctx: 8192
+      }
+    }' |
+    curl -s http://localhost:11434/api/generate -d @- |
+    jq -r '.response' |
+    sed '/^[[:space:]]*$/d' |
+    head -n 1
+}

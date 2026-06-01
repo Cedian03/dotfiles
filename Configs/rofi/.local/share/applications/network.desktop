@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Network Manager
+Comment=Enable/disable WiFi and connect to networks
+Exec=/home/cedian/.config/rofi/scripts/network.sh
+Icon=network-wireless
+Type=Application
+Categories=Utility;System;Network;
