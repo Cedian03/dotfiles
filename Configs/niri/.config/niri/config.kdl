@@ -1,0 +1,28 @@
+// niri config — mirrors ~/.config/hypr/
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+// Note: environment variables from hypr/ must be set via
+// the session manager (systemd environment.d) or ~/.zshenv.
+// niri does not set env vars in its config.
+// See modules/env.kdl for the list.
+
+include "modules/input.kdl"
+include "modules/animations.kdl"
+include "modules/layout.kdl"
+include "modules/keybindings.kdl"
+include "modules/autostart.kdl"
+include "modules/workspaces.kdl"
+include "modules/window-rules.kdl"
+include optional=true "modules/outputs.kdl"
+include "modules/env.kdl"
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+/- include "dms/layout.kdl"
+/- include "dms/binds.kdl"

@@ -1,0 +1,27 @@
+// Input — mirrors hypr/modules/keybindings.lua keyboard + environment.lua cursor
+// https://niri-wm.github.io/niri/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+            layout "us,se"
+            options "grp:win_space_toggle"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+        // natural-scroll
+    }
+
+    // Mouse warp to center of newly focused windows
+    // warp-mouse-to-focus
+
+    // Focus windows when moving the mouse onto them
+    // focus-follows-mouse max-scroll-amount="0%"
+}

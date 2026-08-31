@@ -1,0 +1,6 @@
+// Autostart — mirrors hypr/modules/autostart.lua
+// https://niri-wm.github.io/niri/Configuration:-Key-Bindings
+
+spawn-at-startup "alacritty"
+// spawn-at-startup "waybar"
+// spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"

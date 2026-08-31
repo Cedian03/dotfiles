@@ -1,0 +1,15 @@
+// Workspaces — mirrors hypr/modules/workspaces.lua
+// https://niri-wm.github.io/niri/Configuration:-Named-Workspaces
+//
+// Hyprland: 5 persistent workspaces (1–5)
+// niri:    workspaces are dynamic by default. Named workspaces
+//          are used for the scratchpad and static workspace access.
+
+// Named workspace for the scratchpad (Hypr special:magic → Mod+S)
+workspace "scratch" {
+    open-on-output "eDP-1"
+}
+
+// Note: numbered workspaces 1–10 are accessed via keybindings
+// using workspace indices (focus-workspace 1, etc.).
+// niri creates workspace slots dynamically; no pre-declaration needed.

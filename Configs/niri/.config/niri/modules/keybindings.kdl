@@ -1,0 +1,146 @@
+// Key bindings — mirrors hypr/modules/keybindings.lua
+// https://niri-wm.github.io/niri/Configuration:-Key-Bindings
+//
+// Hyprland mainMod=SUPER → niri Mod
+
+binds {
+    // ── Launcher ──────────────────────────────────────────────
+    Mod+Return { spawn "alacritty"; }
+    Mod+D      { spawn-sh "pkill rofi || rofi -show drun"; }
+    Mod+E      { spawn "nautilus"; }
+
+    // ── Window management ────────────────────────────────────
+    Mod+W      { close-window; }                         // Hypr: Mod+W
+    Mod+V      { toggle-window-floating; }               // Hypr: Mod+V toggle float
+    Mod+F      { fullscreen-window; }
+
+    // Hypr Mod+P pseudo → niri: toggle tabbed display (closest equivalent)
+    Mod+P      { toggle-column-tabbed-display; }
+
+    // ── Focus: vim keys ──────────────────────────────────────
+    Mod+H      { focus-column-left; }
+    Mod+L      { focus-column-right; }
+    Mod+K      { focus-window-up; }
+    Mod+J      { focus-window-down; }
+
+    // ── Focus: arrow keys ────────────────────────────────────
+    Mod+Left   { focus-column-left; }
+    Mod+Right  { focus-column-right; }
+    Mod+Up     { focus-window-up; }
+    Mod+Down   { focus-window-down; }
+
+    // ── Move window: vim keys ────────────────────────────────
+    // Hypr: Mod+Shift → niri: Mod+Ctrl
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+J { move-window-down; }
+
+    // ── Move window: arrow keys ──────────────────────────────
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Down  { move-window-down; }
+
+    // // ── Monitor focus ────────────────────────────────────────
+    // Mod+Shift+H { focus-monitor-left; }
+    // Mod+Shift+L { focus-monitor-right; }
+    // Mod+Shift+K { focus-monitor-up; }
+    // Mod+Shift+J { focus-monitor-down; }
+    // // ── Monitor move ─────────────────────────────────────────
+    // Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
+    // Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
+
+    // ── Workspaces: numbers 1–10 ─────────────────────────────
+    // Hypr: Mod+1..0 (10 maps to 0), Mod+Shift+1..0, Mod+Alt+1..0
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    // Move window to workspace without following (Hypr: Mod+Shift+num)
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
+
+    // Move window to workspace and follow (Hypr: Mod+Alt+num)
+    Mod+Alt+1 { move-column-to-workspace 1; }
+    Mod+Alt+2 { move-column-to-workspace 2; }
+    Mod+Alt+3 { move-column-to-workspace 3; }
+    Mod+Alt+4 { move-column-to-workspace 4; }
+    Mod+Alt+5 { move-column-to-workspace 5; }
+    Mod+Alt+6 { move-column-to-workspace 6; }
+    Mod+Alt+7 { move-column-to-workspace 7; }
+    Mod+Alt+8 { move-column-to-workspace 8; }
+    Mod+Alt+9 { move-column-to-workspace 9; }
+    Mod+Alt+0 { move-column-to-workspace 10; }
+
+    // ── Workspace scroll ─────────────────────────────────────
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+Page_Down { focus-workspace-down; }
+    Mod+Page_Up   { focus-workspace-up; }
+    Mod+U         { focus-workspace-down; }
+    Mod+I         { focus-workspace-up; }
+
+    // ── Scratch workspace (Hypr: special:magic) ──────────────
+    Mod+S       { focus-workspace "scratch"; }
+    Mod+Shift+S { move-column-to-workspace "scratch"; }
+
+    // ── Column operations ────────────────────────────────────
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+R            { switch-preset-column-width; }
+    Mod+Shift+R      { switch-preset-column-width-back; }
+    Mod+Minus        { set-column-width "-10%"; }
+    Mod+Equal        { set-column-width "+10%"; }
+    Mod+C            { center-column; }
+
+    // ── Screenshots ──────────────────────────────────────────
+    // Hypr: Mod+G (full), Mod+Shift+G (region)
+    Print            { screenshot; }
+    Ctrl+Print       { screenshot-screen; }
+    Alt+Print        { screenshot-window; }
+    Mod+G            { screenshot-screen; }
+    Mod+Shift+G      { spawn-sh "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
+
+    // ── System ───────────────────────────────────────────────
+    Mod+M            { spawn-sh "pkill rofi || ~/.config/rofi/scripts/powermenu.sh"; }
+    Mod+B            { spawn-sh "killall -SIGUSR1 waybar"; }
+    Mod+Shift+E      { quit; }
+    Mod+Shift+Slash  { show-hotkey-overlay; }
+
+    // ── Media keys (audio) ───────────────────────────────────
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // ── Media keys (playback) ────────────────────────────────
+    XF86AudioNext  allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPrev  allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioPlay  allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioPause allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+
+    // ── Brightness keys ──────────────────────────────────────
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl -e4 -n2 set 5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl -e4 -n2 set 5%-"; }
+}
