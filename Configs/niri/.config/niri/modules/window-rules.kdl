@@ -1,30 +1,17 @@
-// Window rules — mirrors hypr/modules/windows.lua
 // https://niri-wm.github.io/niri/Configuration:-Window-Rules
 
 // Global: rounded corners (mirrors Hyprland rounding=8)
-// window-rule {
-//     geometry-corner-radius 8
-//     clip-to-geometry true
-// }
-
-// Hyprland suppress-maximize-events → niri: no direct equivalent.
-// Use open-maximized false per app-id as needed.
-
-// Example: block password managers from screen capture
-// /-window-rule {
-//     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-//     block-out-from "screen-capture"
-// }
-
-// Example: open floating picture-in-picture
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
+    geometry-corner-radius 8
+    clip-to-geometry true
 }
 
-// Firefox spawns maximized (super+f / maximize-column)
+// Set open-maximized to true for all windows.
 window-rule {
-    match app-id=r#"firefox$"#
-    exclude title="^Picture-in-Picture$"
     open-maximized true
+}
+
+window-rule {
+    match app-id="Alacritty"
+    open-maximized false
 }

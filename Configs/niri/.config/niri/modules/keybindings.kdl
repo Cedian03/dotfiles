@@ -1,7 +1,4 @@
-// Key bindings — mirrors hypr/modules/keybindings.lua
 // https://niri-wm.github.io/niri/Configuration:-Key-Bindings
-//
-// Hyprland mainMod=SUPER → niri Mod
 
 binds {
     // ── Launcher ──────────────────────────────────────────────
@@ -12,7 +9,8 @@ binds {
     // ── Window management ────────────────────────────────────
     Mod+W      { close-window; }                         // Hypr: Mod+W
     Mod+V      { toggle-window-floating; }               // Hypr: Mod+V toggle float
-    Mod+F      { fullscreen-window; }
+    Mod+F      { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
 
     // Hypr Mod+P pseudo → niri: toggle tabbed display (closest equivalent)
     Mod+P      { toggle-column-tabbed-display; }
@@ -119,13 +117,8 @@ binds {
     Print            { screenshot; }
     Ctrl+Print       { screenshot-screen; }
     Alt+Print        { screenshot-window; }
-    Mod+G            { screenshot-screen; }
-    Mod+Shift+G      { spawn-sh "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
 
     // ── System ───────────────────────────────────────────────
-    Mod+M            { spawn-sh "pkill rofi || ~/.config/rofi/scripts/powermenu.sh"; }
-    Mod+B            { spawn-sh "killall -SIGUSR1 waybar"; }
-    Mod+Shift+E      { quit; }
     Mod+Shift+Slash  { show-hotkey-overlay; }
 
     // ── Media keys (audio) ───────────────────────────────────

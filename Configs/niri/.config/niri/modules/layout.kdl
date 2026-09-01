@@ -1,13 +1,8 @@
-// Layout — mirrors hypr/modules/decorations.lua
 // https://niri-wm.github.io/niri/Configuration:-Layout
-//
-// Hyprland: gaps_in=8, gaps_out=16, border_size=2, rounding=8
-// niri:    single gaps, focus-ring/border for window edges
-//          geometry-corner-radius via window-rule (see window-rules.kdl)
 
 layout {
     // niri uses one gap value (outer gap equivalent)
-    gaps 16
+    gaps 8
 
     // When to center a column when changing focus
     center-focused-column "on-overflow"
@@ -21,7 +16,10 @@ layout {
     default-column-width { proportion 0.5; }
 
     border {
-        off
+        on
+        width 1
+        active-color   "#c4b5e0"
+        inactive-color "#2a2730"
     }
 
     focus-ring {
@@ -31,20 +29,14 @@ layout {
         inactive-color "#2a2730"
     }
 
-    // Shadows disabled — significant GPU cost on iGPUs.
-    // Re-enable if performance is fine:
-    // shadow {
-    //     on
-    //     softness 30
-    //     spread 5
-    //     offset x=0 y=5
-    //     color "#0007"
-    // }
     shadow {
-        off
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
     }
 
-    // Struts: extra outer padding (mirrors gaps_in feel on edges)
     struts {
         left 8
         right 8

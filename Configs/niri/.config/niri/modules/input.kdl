@@ -1,4 +1,3 @@
-// Input — mirrors hypr/modules/keybindings.lua keyboard + environment.lua cursor
 // https://niri-wm.github.io/niri/Configuration:-Input
 
 input {

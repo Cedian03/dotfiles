@@ -7,14 +7,11 @@
 // See modules/env.kdl for the list.
 
 include "modules/input.kdl"
-include "modules/animations.kdl"
 include "modules/layout.kdl"
 include "modules/keybindings.kdl"
 include "modules/autostart.kdl"
-include "modules/workspaces.kdl"
 include "modules/window-rules.kdl"
 include optional=true "modules/outputs.kdl"
-include "modules/env.kdl"
 
 prefer-no-csd
 
