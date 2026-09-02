@@ -2,7 +2,7 @@
 
 [window]
 padding = { x = 8, y = 8 }
-opacity = 0.75
+# opacity = 0.75
 
 [font]
 size = 12.0
@@ -10,26 +10,7 @@ size = 12.0
 [font.normal]
 family = "Roboto Mono"
 
-[colors.primary]
-foreground = "#ffffff"
-background = "#000000"
-
-[colors.normal]
-black = '#546e7a'
-red = '#f07178'
-green = '#c3e88d'
-yellow = '#ffcb6b'
-blue = '#82aaff'
-magenta = '#c792ea'
-cyan = '#89ddff'
-white = '#eeffff'
-
-[colors.bright]
-black = '#546e7a'
-red = '#f07178'
-green = '#c3e88d'
-yellow = '#ffcb6b'
-blue = '#82aaff'
-magenta = '#c792ea'
-cyan = '#89ddff'
-white = '#ffffff'
+[general]
+import = [
+    "~/.config/alacritty/themes/matugen-theme.toml"
+]

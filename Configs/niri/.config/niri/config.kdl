@@ -21,5 +21,4 @@ hotkey-overlay {
     skip-at-startup
 }
 
-/- include "dms/layout.kdl"
-/- include "dms/binds.kdl"
+include optional=true "themes/matugen-theme.kdl"

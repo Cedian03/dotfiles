@@ -1,0 +1,21 @@
+[config]
+
+[templates.alacritty]
+input_path = "~/.config/matugen/templates/alacritty.toml"
+output_path = "~/.config/alacritty/themes/matugen-theme.toml"
+
+[templates.niri]
+input_path = "~/.config/matugen/templates/niri.kdl"
+output_path = "~/.config/niri/themes/matugen-theme.kdl"
+
+[templates.opencode]
+input_path = "~/.config/matugen/templates/opencode.json"
+output_path = "~/.config/opencode/themes/matugen-theme.json"
+
+[templates.tmux]
+input_path = "~/.config/matugen/templates/tmux.conf"
+output_path = "~/.config/tmux/themes/matugen-theme.conf"
+
+[templates.zed]
+input_path = "~/.config/matugen/templates/zed.json"
+output_path = "~/.config/zed/themes/matugen-theme.json"
