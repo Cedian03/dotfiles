@@ -1,10 +1,4 @@
-// niri config — mirrors ~/.config/hypr/
 // https://niri-wm.github.io/niri/Configuration:-Introduction
-
-// Note: environment variables from hypr/ must be set via
-// the session manager (systemd environment.d) or ~/.zshenv.
-// niri does not set env vars in its config.
-// See modules/env.kdl for the list.
 
 include "modules/input.kdl"
 include "modules/layout.kdl"
