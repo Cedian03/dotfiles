@@ -88,9 +88,9 @@ binds {
     Mod+C            { center-column; }
 
     // ── Screenshots ──────────────────────────────────────────
-    Print            { screenshot; }
-    Ctrl+Print       { screenshot-screen; }
-    Alt+Print        { screenshot-window; }
+    Mod+Shift+S      { spawn-sh "f=\"$HOME/Pictures/Screenshots/Screenshot from $(date +%Y-%m-%d %H-%M-%S).png\"; grim -g \"$(slurp)\" \"$f\" && wl-copy < \"$f\""; }
+    Mod+S            { screenshot-screen; }
+    Mod+Alt+S        { screenshot-window; }
 
     // ── System ───────────────────────────────────────────────
     Mod+Shift+Slash  { show-hotkey-overlay; }
